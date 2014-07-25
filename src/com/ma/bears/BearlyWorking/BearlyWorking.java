@@ -60,15 +60,15 @@ public class BearlyWorking extends IterativeRobot {
     	}
 		SmartDashboard.putNumber("AllPWM", 0);
     	for (int i = 1; i < 8; i++){
-    		SmartDashboard.putBoolean(("RelayForward" + 1), false);
+    		SmartDashboard.putBoolean(("RelayForward" + i), false);
     	}
     	for (int i = 1; i < 8; i++){
-    		SmartDashboard.putBoolean(("RelayReverse" + 1), false);
+    		SmartDashboard.putBoolean(("RelayReverse" + i), false);
     	}
 		SmartDashboard.putBoolean("RelayForwardAll", false);
 		SmartDashboard.putBoolean("RelayReverseAll", false);
     	for(int i = 1; i < 8; i++){
-    		SmartDashboard.putBoolean(("Solenoid" + 1), false);
+    		SmartDashboard.putBoolean(("Solenoid" + i), false);
     	}
     	SmartDashboard.putBoolean("SolenoidAll", false);
 
@@ -115,15 +115,15 @@ public class BearlyWorking extends IterativeRobot {
     	}
     	//for relays we can test both directions
     	for(int i = 1; i < 8; i++){
-    		if(SmartDashboard.getBoolean("RelayForward" + 1))
+    		if(SmartDashboard.getBoolean("RelayForward" + i))
     			((Relay)Relays.elementAt(i)).setDirection(Relay.Direction.kForward);
     	}
     	for(int i = 1; i < 8; i++){
-    		if(SmartDashboard.getBoolean("RelayReverse" + 1))
+    		if(SmartDashboard.getBoolean("RelayReverse" + i))
     			((Relay)Relays.elementAt(i)).setDirection(Relay.Direction.kReverse);
     	}
     	for(int i = 1; i < 8; i++){
-    		((Solenoid)Solenoids.elementAt(i)).set(SmartDashboard.getBoolean("Solenoid" + 1));
+    		((Solenoid)Solenoids.elementAt(i)).set(SmartDashboard.getBoolean("Solenoid" + i));
     	}
     	
 
